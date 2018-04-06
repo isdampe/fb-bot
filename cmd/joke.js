@@ -9,8 +9,8 @@ class Joke extends base {
 		let jokes = [
 			'C#.',
 			'Visual Studio.',
-            'D. Talent',
-            '01101001'
+			'D. Talent',
+			'01101001'
 		];
 		let joke = jokes[Math.floor(Math.random() * jokes.length)];
 		api.sendMessage(joke, msgRaw.threadID);
