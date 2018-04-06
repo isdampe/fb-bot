@@ -8,7 +8,9 @@ class Joke extends base {
 	onTrigger(api, msgRaw, msgParsed) {
 		let jokes = [
 			'C#.',
-			'Visual Studio.'
+			'Visual Studio.',
+            'D. Talent',
+            '01101001'
 		];
 		let joke = jokes[Math.floor(Math.random() * jokes.length)];
 		api.sendMessage(joke, msgRaw.threadID);
