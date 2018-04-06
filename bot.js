@@ -1,7 +1,6 @@
 const fs = require("fs");
 const config = require("./config.js");
 const botCore = require('./core.js');
-const cmdEcho = require('./cmd/echo.js');
 
 const bot = new botCore(config);
 const cmds = [];
