@@ -1,4 +1,5 @@
 const login = require("facebook-chat-api");
+const sha1 = require("sha1");
 
 class BotCore {
 
@@ -6,6 +7,7 @@ class BotCore {
 		this._config = config;
 		this._cmdhooks = {};
 		this._api = false;
+		this._memory = {};
 	}
 
 	login() {
@@ -49,6 +51,19 @@ class BotCore {
 
 	sendMessage(msg, threadID) {
 		this._api.sendMessage(msg, threadID);
+	}
+
+	setMemory(threadID, key, value) {
+		if (! this._memory.hasOwnProperty(threadID))
+			this._memory[threadID] = {}
+		if (value)
+			this._memory[threadID][sha1(key)] = value;
+		else 
+			delete this._memory[threadID][sha1(key)];
+	}
+
+	getMemory(threadID, key, value) {
+		return this._memory[threadID][sha1(key)] || false;
 	}
 
 }
