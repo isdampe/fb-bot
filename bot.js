@@ -10,7 +10,7 @@ var dirBuffer = fs.readdirSync("cmd");
 for (var file of dirBuffer) {
 	if (file.substr(0,1) === "_" || file.substr(file.length -2) !== "js")
 		continue;
-	let cr = require("./cmd/" + file); let cc = new cr(); cc.setup();
+	let cr = require("./cmd/" + file); let cc = new cr(bot); cc.setup();
 	bot.registerCommandHook(cc.getCommand(), cc.onTrigger);
 }
 

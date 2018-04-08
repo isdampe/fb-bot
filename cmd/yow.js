@@ -5,7 +5,7 @@ class Yow extends base {
 		this._command = "yow";
 	}
 
-	onTrigger(api, msgRaw, msgParsed) {
+	onTrigger(core, msgRaw, msgParsed) {
 		let yowmoms = [
 			"Yo momma's teeth are so yellow, when she smiled at traffic, it slowed down",
 			"Yo momma's so fat, she brought a spoon to the Super Bowl",
@@ -20,7 +20,7 @@ class Yow extends base {
 
 		];
 		let yow = yowmoms[Math.floor(Math.random() * yowmoms.length)];
-		api.sendMessage(yow, msgRaw.threadID);
+		core.sendMessage(yow, msgRaw.threadID);
 	}
 }
 
