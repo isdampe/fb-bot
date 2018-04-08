@@ -44,7 +44,11 @@ class BotCore {
 		//Parse the command.
 		let cmd = buffer[0].toLowerCase().trim();
 		if (this._cmdhooks.hasOwnProperty(cmd))
-			this._cmdhooks[cmd](this._api, msg, msg.body.substr(cmd.length +2));
+			this._cmdhooks[cmd](this, msg, msg.body.substr(cmd.length +2));
+	}
+
+	sendMessage(msg, threadID) {
+		this._api.sendMessage(msg, threadID);
 	}
 
 }

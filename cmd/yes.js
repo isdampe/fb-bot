@@ -5,8 +5,8 @@ class Yes extends base {
 		this._command = "yes";
 	}
 
-	onTrigger(api, msgRaw, msgParsed) {
-		api.sendMessage("*_Deep voice_* HELL YESS!!!!!", msgRaw.threadID);
+	onTrigger(core, msgRaw, msgParsed) {
+		core.sendMessage("*_Deep voice_* HELL YESS!!!!!", msgRaw.threadID);
 	}
 }
 

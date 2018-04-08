@@ -1,6 +1,7 @@
 class BaseCmd {
-	constructor() {
+	constructor(core) {
 		this._command = "";
+		this._core = core;
 	}
 
 	setup() {
@@ -11,7 +12,7 @@ class BaseCmd {
 		return this._command;
 	}
 
-	onTrigger(api, msg) {
+	onTrigger(core, msg) {
 	}
 }
 module.exports = BaseCmd;

@@ -5,10 +5,10 @@ class Echo extends base {
 		this._command = "echo";
 	}
 
-	onTrigger(api, msgRaw, msgParsed) {
+	onTrigger(core, msgRaw, msgParsed) {
 		if (msgParsed.length < 1)
 			return;
-		api.sendMessage(msgParsed, msgRaw.threadID);
+		core.sendMessage(msgParsed, msgRaw.threadID);
 	}
 }
 

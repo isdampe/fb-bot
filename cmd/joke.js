@@ -5,7 +5,7 @@ class Joke extends base {
 		this._command = "joke";
 	}
 
-	onTrigger(api, msgRaw, msgParsed) {
+	onTrigger(core, msgRaw, msgParsed) {
 		let jokes = [
 			'C#.',
 			'Visual Studio.',
@@ -13,7 +13,7 @@ class Joke extends base {
 			'01101001'
 		];
 		let joke = jokes[Math.floor(Math.random() * jokes.length)];
-		api.sendMessage(joke, msgRaw.threadID);
+		core.sendMessage(joke, msgRaw.threadID);
 	}
 }
 
