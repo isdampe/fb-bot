@@ -4,7 +4,8 @@
 	"description": "",
 	"main": "bot.js",
 	"dependencies": {
-		"facebook-chat-api": "1.5.0"
+		"facebook-chat-api": "1.5.0",
+		"sha1": "1.1.1"
 	},
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1"
