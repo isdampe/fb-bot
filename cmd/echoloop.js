@@ -26,9 +26,15 @@ class EchoLoop extends base {
 		if (n > 10)
 			n = 10;
 
+
 		for(var i=0; i<n; ++i) {
 			setTimeout(() => {
-				core.sendMessage(newMsg, msgRaw.threadID);
+				if (newMsg.substr(0,1) == "!") {
+					msgRaw.body = newMsg;
+					core.onMessage(false, msgRaw);
+				}
+				else
+					core.sendMessage(newMsg, msgRaw.threadID);
 			}, 1000 * i);
 		}
 
