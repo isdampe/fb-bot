@@ -16,13 +16,13 @@ class Memory extends base {
 		var i = msgParsed.indexOf("=");
 		if (i > -1) {
 			//Set.
-			let key = msgParsed.substr(0, i).trim();
+			let key = msgParsed.substr(0, i).toLowerCase().trim();
 			let value = msgParsed.substr(i + 1).trim() || false;
 			core.setMemory(msgRaw.threadID, key, value);
 			core.sendMessage("*Got it!*", msgRaw.threadID);
 		} else {
 			//Get.
-			let key = msgParsed.trim();
+			let key = msgParsed.toLowerCase().trim();
 			let value = core.getMemory(msgRaw.threadID, key) || "I don't fucking know that.";
 			core.sendMessage(value, msgRaw.threadID);
 		}
