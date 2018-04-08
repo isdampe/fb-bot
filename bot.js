@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 const fs = require("fs");
 const config = require("./config.js");
 const botCore = require('./core.js');
