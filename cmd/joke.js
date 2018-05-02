@@ -10,7 +10,8 @@ class Joke extends base {
 			'C#.',
 			'Visual Studio.',
 			'D. Talent',
-			'01101001'
+			'01101001.',
+			'Stewart.'
 		];
 		let joke = jokes[Math.floor(Math.random() * jokes.length)];
 		core.sendMessage(joke, msgRaw.threadID);
