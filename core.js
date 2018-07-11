@@ -1,5 +1,6 @@
 const login = require("facebook-chat-api");
 const sha1 = require("sha1");
+const logger = require("./logger.js");
 
 class BotCore {
 
@@ -8,6 +9,7 @@ class BotCore {
 		this._cmdhooks = {};
 		this._api = false;
 		this._memory = {};
+		this._logger = new logger("logs");
 	}
 
 	login() {
@@ -37,6 +39,8 @@ class BotCore {
 
 		if (msg.body.length < 2)
 			return;
+
+		this._logger.appendMessage(msg);
 
 		if (msg.body.substr(0,1) !== "!")
 			return;
